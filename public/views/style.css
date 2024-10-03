@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Yaldevi:wght@200..700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Yaldevi';
+}
+
+#header-container {
+    background-color: #f8f8f8;
+    border-bottom: 1px solid #ddd;
+}
+
+#header-container .menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background: #f0eded;
+}
+
+#header-container .menu .menu-left {
+    display: flex;
+    align-items: center;
+}
+
+#header-container .menu .menu-left .menu-item {
+    margin: 0 15px;
+    text-decoration: none;
+    color: #4a00e0;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+#header-container .menu .menu-left .menu-item:hover {
+    color: #000;
+}
+
+#header-container .menu .menu-left .logo {
+    width: 40px;
+    height: 40px;
+    margin-right: 15px;
+}
+
+#header-container .menu .menu-right {
+    display: flex;
+    align-items: center;
+}
+
+#header-container .menu .menu-right .icon {
+    margin-left: 20px;
+    border: 1px solid red;
+}
+
+/* #header-container .menu .menu-right .icon img {
+    width: 24px;
+    height: 24px;
+} */

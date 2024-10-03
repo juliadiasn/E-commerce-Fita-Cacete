@@ -3,6 +3,7 @@ import { testConnection } from './config/dbConnection.mjs';
 
 const app = express();
 app.use(express.static('./public/views'));
+app.use(express.static('./public/images'));
 
 //DATABASE
 testConnection();

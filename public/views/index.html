@@ -4,25 +4,30 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Fitas Kacete e VHS</title>
+
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <!--  -->
     <!-- sublogo: revivendo os melhores momentos -->
-    <header class="header-container">
-      <nav class="menu-content">
-        <ul>
-          <li><a href="#vhs">VHS</a></li>
-          <li><a href="#cassete">Cassete</a></li>
-          <li><a href="#generos">Gêneros</a></li>
-          <li><a href="#sobre">Sobre</a></li>
-          <li><a href="#curiosidades">Curiosidades</a></li>
-          <li>
-            <a href="#conta"><i>Conta</i></a>
-          </li>
-          <li>
-            <a href="#carrinho"><i>Carrinho</i></a>
-          </li>
-        </ul>
+    <header id="header-container">
+      <nav class="menu">
+        <div class="menu-left">
+          <img src="../../images/inicial/logo.png" alt="Logo" class="logo" />
+          <a href="#vhs" class="menu-item">VHS</a>
+          <a href="#cassete" class="menu-item">Cassete</a>
+          <a href="#generos" class="menu-item">Gêneros</a>
+          <a href="#sobre" class="menu-item">Sobre</a>
+          <a href="#curiosidades" class="menu-item">Curiosidades</a>
+        </div>
+        <div class="menu-right">
+          <a href="#" class="icon">
+            <img src="/inicial/cart-icon.png" alt="Carrinho" />
+          </a>
+          <a href="#" class="icon">
+            <img src="/inicial/user-icon.png" alt="Perfil" />
+          </a>
+        </div>
       </nav>
       <div class="header-content">
         <div class="title-subtitle">
@@ -41,7 +46,7 @@
       </div>
     </header>
 
-    <aside class="aside-container">
+    <aside id="aside-container">
       <div class="label-search">
         <input type="text" class="search" />
       </div>
@@ -52,11 +57,11 @@
         <li><a href="">Limitados/Raros</a></li>
       </nav>
     </aside>
-    <main class="main-container">
+    <main id="main-container">
       <div class="cards-products-container">
         <div class="card-product-content">
           <div class="card-product">
-            <img src="imagem" alt="Imagem do produto">
+            <img src="imagem" alt="Imagem do produto" />
             <h4>Nome produtos</h4>
             <p>Descrição</p>
             <p>Preço</p>
@@ -65,7 +70,7 @@
       </div>
     </main>
 
-    <footer class="footer-container">
+    <footer id="footer-container">
       <div class="creators">
         <h3>Design: Rian Kayque</h3>
         <h3>Código: Júlia Dias</h3>
