@@ -18,11 +18,15 @@
           <a href="#curiosidades" class="menu-item">Curiosidades</a>
         </div>
         <div class="menu-right">
-          <a href="#" class="icon">
-            <img src="/inicial/cart-icon.png" alt="Carrinho" />
+          <a href="#" class="icon" onclick="testecar()">
+            <img
+              src="/inicial/cart-icon.png"
+              alt="Carrinho"
+              class="icon-cart"
+            />
           </a>
-          <a href="#" class="icon">
-            <img src="/inicial/user-icon.png" alt="Perfil" />
+          <a href="/pages/login.html" class="icon">
+            <img src="/inicial/user-icon.png" alt="Perfil" class="icon-user" />
           </a>
         </div>
       </nav>
@@ -81,19 +85,6 @@
               <button class="btn-descricao">Ver descrição</button>
             </div>
           </div>
-          <div class="card-product">
-            <img
-              src="https://lh3.googleusercontent.com/proxy/e5f928cfQuZ6TAH_NcGhceNa_QE_SbbVAR29XcXcnhURj2Jv_GboYMHWEgBj5MCdLG033PU_q3nSIi-MF_-0XgmpcEHqt2L4fAoqIIhvCw"
-              alt="Imagem do produto"
-              class="image-product"
-            />
-            <h4>Nome produto</h4>
-            <p>R$ <span id="preco">0,00</span></p>
-            <div class="buttons">
-              <button class="btn-comprar">Comprar</button>
-              <button class="btn-descricao">Ver descrição</button>
-            </div>
-          </div>
         </div>
       </section>
     </main>
@@ -103,6 +94,7 @@
         <h3>Design: <span>Rian Kayque</span></h3>
         <h3>Código: <span>Júlia Dias</span></h3>
         <h3>Conteúdo: <span>Isadora Magalhães</span></h3>
+        <h3>Pesquisa: <span>Júlia Pascoal</span></h3>
       </div>
       <div class="payment">
         <h3>FORMA DE PAGAMENTO</h3>
@@ -112,9 +104,9 @@
         />
       </div>
       <div class="contact">
-        <h3>Contato</h3>
-        <p>Email: contato@seusite.com</p>
-        <p>Telefone: (00) 1234-5678</p>
+        <h3>Feito por</h3>
+        <p>GRUPO 6</p>
+        <p>TURMA I3A</p>
       </div>
       <div class="social-media">
         <h3>Redes Sociais</h3>
@@ -124,4 +116,15 @@
       </div>
     </footer>
   </body>
+
+  <script>
+    function testecar() {
+      const imgCart = document.getElementsByClassName('icon-cart');
+      console.log('CART CLICADO');
+    }
+    function testeuser() {
+      const imgCart = document.getElementsByClassName('icon-user');
+      console.log('USER CLICADO');
+    }
+  </script>
 </html>
