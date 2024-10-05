@@ -4,12 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Fitas Kacete e VHS</title>
-
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <!--  -->
-    <!-- sublogo: revivendo os melhores momentos -->
     <header id="header-container">
       <nav class="menu">
         <div class="menu-left">
@@ -30,53 +27,100 @@
         </div>
       </nav>
       <div class="header-content">
-  <div class="title-subtitle">
-    <h1>Procurando por fitas antig<span>as?</span></h1>
-    <h2>Nós temos um dos maiores acervos de fitas VHS do Brasil</h2>
-    <button class="cta-button">Não tem uma conta? Faça o seu cadastro já!</button>
-  </div>
-  <img src="/inicial/img-header.png" alt="Imagem do cabeçalho" class="header-image">
-</div>
-
-    </header>
-
-    <aside id="aside-container">
-      <div class="label-search">
-        <input type="text" class="search" />
+        <div class="title-subtitle">
+          <h1>Procurando por fitas <span>antigas?</span></h1>
+          <h2>Nós temos um dos maiores acervos de fitas VHS do Brasil</h2>
+          <button class="cta-button">
+            Não tem uma conta? Faça o seu cadastro já!
+          </button>
+        </div>
+        <img
+          src="/inicial/img-header.png"
+          alt="Imagem do cabeçalho"
+          class="header-image"
+        />
       </div>
-      <nav class="sidebar-content">
-        <li><a href="">Novidades</a></li>
-        <li><a href="">Cinema</a></li>
-        <li><a href="">Música</a></li>
-        <li><a href="">Limitados/Raros</a></li>
-      </nav>
-    </aside>
+    </header>
     <main id="main-container">
-      <div class="cards-products-container">
-        <div class="card-product-content">
+      <aside id="aside-container">
+        <nav class="menu-filtros">
+          <input type="text" placeholder="Pesquisar" id="ipt-pesquisar" />
+          <ul>
+            <li><a href="#">Novidades</a></li>
+            <div class="divisor"></div>
+            <li><a href="#">Gêneros</a></li>
+            <div class="divisor"></div>
+            <li><a href="#">Cinema</a></li>
+            <div class="divisor"></div>
+            <li><a href="#">Música</a></li>
+            <div class="divisor"></div>
+            <li><a href="#">Famosos</a></li>
+            <div class="divisor"></div>
+            <li><a href="#">Históricos</a></li>
+            <div class="divisor"></div>
+            <li><a href="#">Edições Raras</a></li>
+            <div class="divisor"></div>
+          </ul>
+        </nav>
+      </aside>
+      <section class="section-container">
+        <div class="category-product">
+          <h2>Categoria</h2>
+        </div>
+        <div class="cards-products">
           <div class="card-product">
-            <img src="imagem" alt="Imagem do produto" />
-            <h4>Nome produtos</h4>
-            <p>Descrição</p>
-            <p>Preço</p>
+            <img
+              src="https://lh3.googleusercontent.com/proxy/e5f928cfQuZ6TAH_NcGhceNa_QE_SbbVAR29XcXcnhURj2Jv_GboYMHWEgBj5MCdLG033PU_q3nSIi-MF_-0XgmpcEHqt2L4fAoqIIhvCw"
+              alt="Imagem do produto"
+              class="image-product"
+            />
+            <h4>Nome produto</h4>
+            <p>R$ <span id="preco">0,00</span></p>
+            <div class="buttons">
+              <button class="btn-comprar">Comprar</button>
+              <button class="btn-descricao">Ver descrição</button>
+            </div>
+          </div>
+          <div class="card-product">
+            <img
+              src="https://lh3.googleusercontent.com/proxy/e5f928cfQuZ6TAH_NcGhceNa_QE_SbbVAR29XcXcnhURj2Jv_GboYMHWEgBj5MCdLG033PU_q3nSIi-MF_-0XgmpcEHqt2L4fAoqIIhvCw"
+              alt="Imagem do produto"
+              class="image-product"
+            />
+            <h4>Nome produto</h4>
+            <p>R$ <span id="preco">0,00</span></p>
+            <div class="buttons">
+              <button class="btn-comprar">Comprar</button>
+              <button class="btn-descricao">Ver descrição</button>
+            </div>
           </div>
         </div>
-      </div>
+      </section>
     </main>
 
     <footer id="footer-container">
       <div class="creators">
-        <h3>Design: Rian Kayque</h3>
-        <h3>Código: Júlia Dias</h3>
-        <h3>Conteúdo: Isadora Magalhães</h3>
+        <h3>Design: <span>Rian Kayque</span></h3>
+        <h3>Código: <span>Júlia Dias</span></h3>
+        <h3>Conteúdo: <span>Isadora Magalhães</span></h3>
       </div>
-
       <div class="payment">
         <h3>FORMA DE PAGAMENTO</h3>
         <img
-          src="formadepagamento"
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Logo%E2%80%94pix_powered_by_Banco_Central_%28Brazil%2C_2020%29.svg/1200px-Logo%E2%80%94pix_powered_by_Banco_Central_%28Brazil%2C_2020%29.svg.png"
           alt="Imagem que contém as formas de pagamento."
         />
+      </div>
+      <div class="contact">
+        <h3>Contato</h3>
+        <p>Email: contato@seusite.com</p>
+        <p>Telefone: (00) 1234-5678</p>
+      </div>
+      <div class="social-media">
+        <h3>Redes Sociais</h3>
+        <a href="https://www.facebook.com" target="_blank">Facebook</a> |
+        <a href="https://www.instagram.com" target="_blank">Instagram</a> |
+        <a href="https://www.twitter.com" target="_blank">Twitter</a>
       </div>
     </footer>
   </body>
