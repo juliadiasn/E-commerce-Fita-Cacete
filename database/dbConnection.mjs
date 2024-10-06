@@ -1,9 +1,6 @@
 import { Sequelize } from 'sequelize';
 import dotenv from 'dotenv';
 
-
-
-// Carregar variáveis de ambiente do arquivo .env
 dotenv.config();
 const dbConnection = new Sequelize(
   process.env.MYSQLDATABASE,
@@ -14,7 +11,6 @@ const dbConnection = new Sequelize(
     host: process.env.MYSQLHOST,
     port: process.env.MYSQLPORT,
     dialect: 'mysql',
-    logging: false, // Desativa logs das queries no console
   },
 );
 
@@ -22,7 +18,7 @@ const dbConnection = new Sequelize(
 const testConnection = async () => {
   try {
     await dbConnection.authenticate();
-    console.log('Conectado ao banco de dados MySQL no Railway com sucesso!');
+    console.log('Conectado ao banco de dados MySQL - Fitas com sucesso!');
   } catch (error) {
     console.error('Erro ao conectar ao banco de dados:', error);
   }
