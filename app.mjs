@@ -1,5 +1,5 @@
 import express from 'express';
-import { testConnection } from './config/dbConnection.mjs';
+import { testConnection } from './database/dbConnection.mjs';
 
 const app = express();
 app.use(express.static('./public/views'));
