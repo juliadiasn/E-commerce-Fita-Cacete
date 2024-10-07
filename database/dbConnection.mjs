@@ -7,7 +7,6 @@ const dbConnection = new Sequelize(
   process.env.MYSQLUSER,
   process.env.MYSQLPASSWORD,
   {
-    
     host: process.env.MYSQLHOST,
     port: process.env.MYSQLPORT,
     dialect: 'mysql',
@@ -27,4 +26,4 @@ const testConnection = async () => {
 testConnection();
 
 export default dbConnection;
-export {testConnection};
+export { testConnection };
