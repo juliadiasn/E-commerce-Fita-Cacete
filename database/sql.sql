@@ -12,7 +12,15 @@ CREATE TABLE produto (
 
 
 
+CREATE TABLE user (
+    id SERIAL PRIMARY KEY,
+    nome VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL
+);
 
+delete from user;
 
+select * from user;
 
-
+insert into user values (1, "julia","admin", "admmin");

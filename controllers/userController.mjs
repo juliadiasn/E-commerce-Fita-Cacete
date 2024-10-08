@@ -1,10 +1,14 @@
 import jwt from 'jsonwebtoken';
 import tbUser from '../models/userModel.mjs';
+import bcrypt from 'bcrypt';
 
 export async function registerUser(req, res) {
   const { nome, email, password } = req.body;
   try {
-    const user = new tbUser({ nome, email, password });
+    const hashPassword = await bcrypt.hash(password, 10);
+    // console.log(hashPassword);
+
+    const user = new tbUser({ nome, email, password: hashPassword });
     await user.save();
 
     const token = jwt.sign({ userId: user.id }, 'MY_SECRET_KEY');
@@ -18,17 +22,19 @@ export async function loginUser(req, res) {
   if (!email || !password) {
     return res.status(422).send({ error: 'Must provide email and password' });
   }
-  console.log(email);
 
   const user = await tbUser.findOne({ where: { email } });
-  console.log(user);
+  // console.log(user);
 
   if (!user) {
+    console.log('morrendo');
     return res.status(422).send({ error: 'Invalid password or email' });
   }
 
   try {
-    const data = await user.comparePassword(password);
+    const data = await bcrypt.compare(password, user.dataValues.password);
+    // console.log(data);
+    // console.log(password);
     if (data) {
       const token = jwt.sign({ userId: user.id }, 'MY_SECRET_KEY');
       res.send({ token });
