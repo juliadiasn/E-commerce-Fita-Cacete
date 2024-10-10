@@ -1,5 +1,3 @@
-import { acessaLoginUser } from './authAcessaDados.mjs';
-
 async function manipulaLoginUser(event) {
   event.preventDefault();
 
@@ -11,11 +9,23 @@ async function manipulaLoginUser(event) {
     password: iptPassword.value,
   };
 
-  await acessaLoginUser(object);
-  document.forms[0].reset();
+  const response = await fetch('/api/users/login', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(object),
+    credentials: 'include',
+  });
 
-  iptEmail.value = '';
-  iptPassword.value = '';
+  if (response.ok) {
+    const data = await response.json();
+    alert(data.message);
+    window.location.href = '/';
+  } else {
+    const errorData = await response.json();
+    alert(errorData.error);
+  }
 }
 
 const btEntrar = document.getElementById('bt-entrar');

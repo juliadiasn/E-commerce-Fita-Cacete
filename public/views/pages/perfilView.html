@@ -1,0 +1,26 @@
+<!-- profile.html -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Página de Perfil</title>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.1/dist/js.cookie.min.js"></script>
+  </head>
+  <body>
+    <header id="header-container">
+      <nav id="nav-container">
+        <img src="/inicial/logo.png" alt="" class="logo" />
+        <a href="../index.html">Inicial</a>
+      </nav>
+    </header>
+    <h1>Meu Perfil</h1>
+    <div id="profile-info">
+      <p><strong>Nome:</strong> <span id="user-name"></span></p>
+      <p><strong>Email:</strong> <span id="user-email"></span></p>
+    </div>
+    <button id="logout-button" style="display: none">Logout</button>
+    <button id="login-button" style="display: none">Fazer Login</button>
+    <script type="module" src="./src/profile.mjs"></script>
+  </body>
+</html>

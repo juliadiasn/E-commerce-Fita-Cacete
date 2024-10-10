@@ -11,21 +11,21 @@
       <nav class="menu">
         <div class="menu-left">
           <img src="/inicial/logo.png" alt="Logo" class="logo" />
+          <a href="#todos" class="menu-item">Todos</a>
           <a href="#vhs" class="menu-item">VHS</a>
           <a href="#cassete" class="menu-item">Cassete</a>
-          <a href="#generos" class="menu-item">Gêneros</a>
           <a href="#sobre" class="menu-item">Sobre</a>
           <a href="#curiosidades" class="menu-item">Curiosidades</a>
         </div>
         <div class="menu-right">
-          <a href="#" class="icon" onclick="testecar()">
+          <a href="#" class="icon">
             <img
               src="/inicial/cart-icon.png"
               alt="Carrinho"
               class="icon-cart"
             />
           </a>
-          <a href="/auth/loginView.html" class="icon">
+          <a href="/pages/perfilView.html" class="icon">
             <img src="/inicial/user-icon.png" alt="Perfil" class="icon-user" />
           </a>
         </div>
@@ -34,9 +34,11 @@
         <div class="title-subtitle">
           <h1>Procurando por fitas <span>antigas?</span></h1>
           <h2>Nós temos um dos maiores acervos de fitas VHS do Brasil</h2>
-          <button class="cta-button">
-            Não tem uma conta? Faça o seu cadastro já!
-          </button>
+          <a href="/auth/registerView.html">
+            <button class="cta-button">
+              Não tem uma conta? Faça o seu cadastro já!
+            </button>
+          </a>
         </div>
         <img
           src="/inicial/img-header.png"
@@ -48,27 +50,24 @@
     <main id="main-container">
       <aside id="aside-container">
         <nav class="menu-filtros">
-          <input type="text" placeholder="Pesquisar" id="ipt-pesquisar" />
           <ul>
-            <li><a href="#">Novidades</a></li>
+            <li><a href="#novidades" class="menu-gender">Novidades</a></li>
             <div class="divisor"></div>
-            <li><a href="#">Gêneros</a></li>
+            <li><a href="#cinema" class="menu-gender">Cinema</a></li>
             <div class="divisor"></div>
-            <li><a href="#">Cinema</a></li>
+            <li><a href="#musica" class="menu-gender">Música</a></li>
             <div class="divisor"></div>
-            <li><a href="#">Música</a></li>
+            <li><a href="#famosos" class="menu-gender">Famosos</a></li>
             <div class="divisor"></div>
-            <li><a href="#">Famosos</a></li>
+            <li><a href="#historicos" class="menu-gender">Históricos</a></li>
             <div class="divisor"></div>
-            <li><a href="#">Históricos</a></li>
-            <div class="divisor"></div>
-            <li><a href="#">Edições Raras</a></li>
+            <li><a href="#raros" class="menu-gender">Edições Raras</a></li>
             <div class="divisor"></div>
           </ul>
         </nav>
       </aside>
       <section class="section-container">
-        <div class="category-product">
+        <div class="category-product" id="category-title">
           <h2>Categoria</h2>
         </div>
         <div class="cards-products" id="product-list">

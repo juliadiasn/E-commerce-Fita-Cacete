@@ -16,11 +16,11 @@
       <h2>ATENÇÃO!</h2>
       <p>Preencha todos os campos corretamente.</p>
       <div class="form-login">
-        <form action="" method="post">
+        <form action="/api/users/login" method="post">
           <label for="user-email">Email</label>
-          <input type="email" name="user-email" id="user-email" />
+          <input type="email" name="email" id="user-email" required />
           <label for="user-password">Senha</label>
-          <input type="password" name="user-password" id="user-password" />
+          <input type="password" name="password" id="user-password" required />
           <button id="bt-entrar" type="submit">Entrar</button>
         </form>
         <div class="option-login">
@@ -29,6 +29,6 @@
         </div>
       </div>
     </main>
+    <script type="module" src="js/loginManipulaInterface.mjs"></script>
   </body>
-  <script type="module" src="js/loginManipulaInterface.mjs"></script>
 </html>

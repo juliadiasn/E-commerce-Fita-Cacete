@@ -18,7 +18,7 @@ body {
       rgba(16, 4, 60, 0.8)
     ),
     url('/inicial/water-texture.png');
-  background-size: cover;
+  background-size: 100%;
   background-position: center center;
   width: 100%;
   margin: 0;
@@ -164,30 +164,6 @@ body {
   border-left: none;
 }
 
-.menu-filtros #ipt-pesquisar {
-  flex: 1 0 auto;
-  width: 100%;
-  padding: 10px;
-  background-color: #ccbeff;
-  border: none;
-  border-bottom: 1px solid #ccc;
-  border-radius: 10px;
-  margin-bottom: 15px;
-}
-
-.menu-filtros #ipt-pesquisar::-webkit-input-placeholder {
-  font-size: 14px;
-  color: #f0eded;
-  text-align: center;
-}
-
-.menu-filtros #ipt-pesquisar:focus {
-  color: #f0f0f0;
-  outline: none;
-  box-shadow: 0 0 5px #bfaff8;
-  background: #3f1fb3;
-}
-
 .menu-filtros ul {
   list-style: none;
   padding: 0;
@@ -242,7 +218,7 @@ body {
   border: none;
   border-radius: 10px;
   font-size: 10px;
-  font-weight: lighter;
+  font-weight: 500;
 }
 
 .cards-products {
@@ -255,8 +231,7 @@ body {
 
 .card-product {
   flex-basis: calc(33.33% - 10px);
-  max-width: 400px;
-  min-width: 300px;
+  width: 400px;
   text-align: center;
   border: 1px solid #ccc;
   border-radius: 10px;
@@ -267,8 +242,8 @@ body {
 }
 
 .card-product img {
-  max-width: 100%;
-  height: auto;
+  width: 300px;
+  height: 300px;
 }
 
 .card-product h4,
