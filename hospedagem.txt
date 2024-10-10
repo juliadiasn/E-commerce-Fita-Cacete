@@ -1,33 +1,3 @@
 render
 
 ERRO - 422 VALIDATION ERRO
-
-
--- PRODUTOS
-async function fetchProducts() {
-            try {
-                const response = await fetch('/api/products');
-                const products = await response.json();
-
-                // Seleciona o contêiner onde os produtos serão inseridos
-                const productList = document.getElementById('product-list');
-
-                // Itera sobre os produtos e insere no HTML
-                products.forEach(product => {
-                    const productCard = `
-                        <div class="card-product">
-                            <h2>${product.name}</h2>
-                            <p>${product.description}</p>
-                            <p>Preço: R$${product.price}</p>
-                            <p>Estoque: ${product.stock}</p>
-                        </div>
-                    `;
-                    productList.innerHTML += productCard;
-                });
-            } catch (error) {
-                console.error('Erro ao buscar produtos:', error);
-            }
-        }
-
-        // Chama a função ao carregar a página
-        window.onload = fetchProducts;
