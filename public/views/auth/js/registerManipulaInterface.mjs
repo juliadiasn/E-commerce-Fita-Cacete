@@ -1,4 +1,4 @@
-import { acessaRegisteruser } from './registerAcessaDados.mjs';
+import { acessaRegisteruser } from './authAcessaDados.mjs';
 
 async function manipulaRegisterUser(event) {
   event.preventDefault();

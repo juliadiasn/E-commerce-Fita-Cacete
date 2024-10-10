@@ -4,6 +4,7 @@ import dotenv from 'dotenv';
 dotenv.config();
 //routes
 import routerUser from './routes/userRouter.mjs';
+import routerProduto from './routes/produtoRouter.mjs';
 
 const app = express();
 app.use(express.urlencoded({ extended: false }));
@@ -34,7 +35,9 @@ dbConnection
   });
 
 //routes
-app.use('/users', routerUser);
+app.use('/api/users', routerUser);
+app.use('/api/produtos', routerProduto
+)
 app.use((error, req, res, next) => {
   res.status(error.status || 500);
   res.json({
@@ -47,6 +50,8 @@ app.use((error, req, res, next) => {
 //static
 app.use(express.static('./public/views'));
 app.use(express.static('./public/images'));
+app.use(express.static('./public/images/produtos/vhs'));
+app.use(express.static('./public/images/produtos/'));
 
 app.listen(process.env.PORT, () => {
   console.log('Servidor iniciado na porta: ', process.env.PORT);

@@ -71,20 +71,8 @@
         <div class="category-product">
           <h2>Categoria</h2>
         </div>
-        <div class="cards-products">
-          <div class="card-product">
-            <img
-              src="https://lh3.googleusercontent.com/proxy/e5f928cfQuZ6TAH_NcGhceNa_QE_SbbVAR29XcXcnhURj2Jv_GboYMHWEgBj5MCdLG033PU_q3nSIi-MF_-0XgmpcEHqt2L4fAoqIIhvCw"
-              alt="Imagem do produto"
-              class="image-product"
-            />
-            <h4>Nome produto</h4>
-            <p>R$ <span id="preco">0,00</span></p>
-            <div class="buttons">
-              <button class="btn-comprar">Comprar</button>
-              <button class="btn-descricao">Ver descrição</button>
-            </div>
-          </div>
+        <div class="cards-products" id="product-list">
+          <!-- ESTA SENDO ADICONADO DINAMICAMENTE -->
         </div>
       </section>
     </main>
@@ -116,15 +104,5 @@
       </div>
     </footer>
   </body>
-
-  <script>
-    function testecar() {
-      const imgCart = document.getElementsByClassName('icon-cart');
-      console.log('CART CLICADO');
-    }
-    function testeuser() {
-      const imgCart = document.getElementsByClassName('icon-user');
-      console.log('USER CLICADO');
-    }
-  </script>
+  <script type="module" src="./src/js/produtoManipulaInterface.mjs"></script>
 </html>

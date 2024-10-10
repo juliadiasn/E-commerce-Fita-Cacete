@@ -10,8 +10,6 @@ CREATE TABLE produto (
     imagem_produto VARCHAR(255)
 );
 
-
-
 CREATE TABLE user (
     id SERIAL PRIMARY KEY,
     nome VARCHAR(255) NOT NULL,
@@ -21,6 +19,8 @@ CREATE TABLE user (
 
 delete from user;
 
-select * from user;
+select * from produto;
 
 insert into user values (1, "julia","admin", "admmin");
+
+insert into produto values (1, 'Produto teste', 'teste', 2.00, 'produto1.png')

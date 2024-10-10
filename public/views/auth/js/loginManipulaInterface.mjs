@@ -1,4 +1,4 @@
-import { acessaLoginUser } from './loginAcessaDados.mjs';
+import { acessaLoginUser } from './authAcessaDados.mjs';
 
 async function manipulaLoginUser(event) {
   event.preventDefault();
@@ -16,9 +16,7 @@ async function manipulaLoginUser(event) {
 
   iptEmail.value = '';
   iptPassword.value = '';
-
-  
 }
 
 const btEntrar = document.getElementById('bt-entrar');
-btEntrar.addEventListener('click', manipulaLoginUser)
+btEntrar.addEventListener('click', manipulaLoginUser);
