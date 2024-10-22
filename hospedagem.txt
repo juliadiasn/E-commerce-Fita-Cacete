@@ -1,17 +1,2 @@
-render
-
-ERRO - 422 VALIDATION ERRO
-
-
-/* usar depois */
-import Cookies from 'js-cookie'; // Certifique-se de importar a biblioteca js-cookie
-
-// Verifica se o cookie com o token existe
-const token = Cookies.get('authToken');
-if (!token) {
-  // Se não houver token, redireciona o usuário para a página de login
-  window.location.href = '/login';
-} else {
-  // Token está presente, usuário está autenticado
-  // Continue com a lógica da página
-}
+railway ou render
+github pags - ?
