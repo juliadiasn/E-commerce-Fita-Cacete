@@ -9,6 +9,7 @@ export async function registerUser(req, res) {
 
     const user = new tbUser({ nome, email, password: hashPassword });
     await user.save();
+    
 
     const token = jwt.sign({ userId: user.id }, 'MY_SECRET_KEY', {
       expiresIn: '1h',

@@ -11,7 +11,7 @@ const tbProduto = dbConnection.define(
       primaryKey: true,
       autoIncrement: true,
     },
-    nome_produto: { 
+    nome_produto: {
       type: DataTypes.STRING,
       allowNull: false,
     },
@@ -19,16 +19,17 @@ const tbProduto = dbConnection.define(
       type: DataTypes.STRING(2000),
       allowNull: false,
     },
-    preco_produto: {  
+    preco_produto: {
       type: DataTypes.DECIMAL(10, 2),
       allowNull: false,
     },
-    imagem_produto: {  
+    imagem_produto: {
       type: DataTypes.STRING,
     },
     id_categoria: {
-      type: DataTypes.BIGINT
-    }
+      type: DataTypes.BIGINT,
+      allowNull: false,
+    },
   },
   {
     tableName: 'produto',
@@ -36,11 +37,11 @@ const tbProduto = dbConnection.define(
   },
 );
 
-tbProduto.belongsTo(tbCategoria, {foreignKey: 'id_categoria'})
-tbCategoria.hasMany(tbProduto, {foreignKey: 'id_categoria'})
+tbProduto.belongsTo(tbCategoria, { foreignKey: 'id_categoria' });
+tbCategoria.hasMany(tbProduto, { foreignKey: 'id_categoria' });
 
-tbProduto.belongsTo(tbGenero, { foreignKey: 'id_genero' })
-tbGenero.hasMany(tbGenero, {foreignKey:'id_genero'})
+tbProduto.belongsTo(tbGenero, { foreignKey: 'id_genero' });
+tbGenero.hasMany(tbGenero, { foreignKey: 'id_genero' });
 
-
+// Exportando o modelo
 export default tbProduto;

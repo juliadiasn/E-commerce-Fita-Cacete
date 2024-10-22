@@ -76,7 +76,6 @@ body {
 
 #header-container .menu .menu-right .icon {
   margin-left: 20px;
-
 }
 
 #header-container .menu .menu-right .icon a {
@@ -258,6 +257,22 @@ p {
 
 .card-product p {
   margin: 5px 0;
+}
+
+.card-product p.descricao {
+  font-size: 16px;
+  color: #444;
+  line-height: 1.5;
+  margin: 10px 0;
+  padding: 0 10px;
+  text-align: justify;
+  max-height: 100px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  line-clamp: initial;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
 }
 
 .card-product .buttons {

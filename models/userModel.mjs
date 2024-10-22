@@ -29,4 +29,5 @@ const tbUser = dbConnection.define(
   },
 );
 
+
 export default tbUser;

@@ -4,7 +4,6 @@ import {
   getProdutosGenero,
 } from './produtoAcessaDados.mjs';
 
-// Função para criar um card de produto
 function criaCardProduto(produto) {
   const productCard = document.createElement('div');
   productCard.classList.add('card-product');
@@ -17,19 +16,15 @@ function criaCardProduto(produto) {
     />
     <h4>${produto.nome_produto}</h4>
     <p>R$ ${produto.preco_produto}</p>
-    <div class="buttons">
-      <button class="btn-comprar">Comprar</button>
-      <button class="btn-descricao">Ver descrição</button>
-    </div>
+    <p class="descricao">${produto.descricao}</p>
   `;
 
   return productCard;
 }
 
-// Função para desenhar os produtos na página
 async function desenhaProdutosNaPagina(produtos) {
   const productList = document.getElementById('product-list');
-  productList.innerHTML = ''; // Limpa a lista antes de desenhar novos produtos
+  productList.innerHTML = '';
 
   produtos.forEach(produto => {
     const productCard = criaCardProduto(produto);
@@ -37,35 +32,31 @@ async function desenhaProdutosNaPagina(produtos) {
   });
 }
 
-// Função para carregar produtos com base no tipo (categoria ou gênero)
 async function carregarProdutos(filtrarFunc, id, nome) {
   try {
     const produtos = await filtrarFunc(id);
     desenhaProdutosNaPagina(produtos);
-    atualizarTituloCategoria(nome); // Atualiza o título da categoria/gênero
+    atualizarTituloCategoria(nome);
   } catch (error) {
     console.error(`Erro ao buscar produtos de ${nome}:`, error);
   }
 }
 
-// Função para carregar todos os produtos
 async function carregarTodosProdutos() {
   try {
     const todosProdutos = await getListaProduto();
     desenhaProdutosNaPagina(todosProdutos);
-    atualizarTituloCategoria("Todos os Produtos"); // Atualiza para "Todos"
+    atualizarTituloCategoria('Todos os Produtos');
   } catch (error) {
     console.error('Erro ao carregar todos os produtos:', error);
   }
 }
 
-// Função para atualizar o título da categoria/gênero
 function atualizarTituloCategoria(nome) {
   const tituloCategoria = document.getElementById('category-title');
   tituloCategoria.textContent = nome;
 }
 
-// Função para associar eventos de clique genéricos para categorias e gêneros
 function associarEventos(menuSelector, tipo) {
   const menuItens = document.querySelectorAll(menuSelector);
 
@@ -114,9 +105,8 @@ function associarEventos(menuSelector, tipo) {
   });
 }
 
-// Carrega todos os produtos na inicialização da página
 window.onload = () => {
   carregarTodosProdutos();
-  associarEventos('.menu-item', 'categoria'); // Associa os eventos de categoria
-  associarEventos('.menu-gender', 'genero'); // Associa os eventos de gênero
+  associarEventos('.menu-item', 'categoria');
+  associarEventos('.menu-gender', 'genero');
 };

@@ -1,27 +1,37 @@
 async function fetchUserProfile() {
-    const response = await fetch('/api/users/profile', {
-        method: 'GET',
-        credentials: 'include'
-    });
+    document.getElementById('loading-spinner').style.display = 'block'; 
+    
+    try {
+        const response = await fetch('/api/users/profile', {
+            method: 'GET',
+            credentials: 'include'
+        });
 
-    if (response.ok) {
-        const userProfile = await response.json();
-        document.getElementById('user-name').textContent = userProfile.nome;
-        document.getElementById('user-email').textContent = userProfile.email;
-        
-        document.getElementById('login-button').style.display = 'none';
-        document.getElementById('logout-button').style.display = 'block';
-    } else if (response.status === 401) {
-        // Exibe uma mensagem ou alerta em vez de redirecionar imediatamente
-        alert('Você não está autenticado. Clique em "Fazer Login" para acessar.');
-        document.getElementById('login-button').style.display = 'block';
-        document.getElementById('logout-button').style.display = 'none';
-    } else {
-        console.error('Erro ao recuperar o perfil:', response.statusText);
+        document.getElementById('loading-spinner').style.display = 'none';
+
+        if (response.ok) {
+            const userProfile = await response.json();
+            document.getElementById('user-name').textContent = userProfile.nome;
+            document.getElementById('user-email').textContent = userProfile.email;
+            
+            document.getElementById('login-button').style.display = 'none';
+            document.getElementById('logout-button').style.display = 'block';
+        } else if (response.status === 401) {
+            document.getElementById('auth-message').textContent = 'Por favor, faça login para acessar seu perfil.';
+            document.getElementById('login-button').style.display = 'block';
+            document.getElementById('logout-button').style.display = 'none';
+        } else {
+            console.error('Erro ao recuperar o perfil:', response.statusText);
+        }
+    } catch (error) {
+        document.getElementById('loading-spinner').style.display = 'none'; 
+        console.error('Erro ao recuperar o perfil:', error);
+        document.getElementById('auth-message').textContent = 'Erro ao carregar o perfil. Tente novamente mais tarde.';
     }
 }
 
-// Logout function
+
+
 document.getElementById('logout-button').addEventListener('click', () => {
     fetch('/api/users/logout', {
         method: 'POST',
@@ -36,7 +46,7 @@ document.getElementById('logout-button').addEventListener('click', () => {
     });
 });
 
-// Lógica do botão de "Fazer Login"
+
 document.getElementById('login-button').addEventListener('click', () => {
     window.location.href = '/auth/loginView.html'; 
 });

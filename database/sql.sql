@@ -55,9 +55,3 @@ insert into produto values (2, 'Fita VHS - TESTE', 'Bem bacana e antiga', 20.00,
 insert into produto values (3, 'Fita K7 - TESTE', 'Bem colorida e diferente', 100.00, '/cassete/produto1.png', 2, 4);
 insert into produto values (4, 'Fita K7 - TESTE2', 'Bem colorida e diferente', 100.00, '/cassete/produto1.png', 2, 6);
 insert into produto values (5, 'Fita VHS - TESTE2', 'Bem estranha?', 100.00, '/vhs/produto2.png', 1, 5);
-
-
-SELECT 
-    *
-FROM
-    produto;

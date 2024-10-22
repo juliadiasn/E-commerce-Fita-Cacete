@@ -1,6 +1,5 @@
 import urlBase from '../../constantes/urls.mjs';
 
-// Função para listar todos os produtos
 async function getListaProduto() {
   try {
     const response = await fetch(`${urlBase}/api/produtos/listar`);
@@ -17,7 +16,6 @@ async function getListaProduto() {
   }
 }
 
-// Função para buscar produtos por categoria
 async function getProdutosCategoria(idCategoria) {
   try {
     const response = await fetch(`${urlBase}/api/produtos/categoria/${idCategoria}`);
@@ -51,6 +49,25 @@ async function getProdutosGenero(idGenero) {
   }
 }
 
+async function fetchUserProfile() {
+  try {
+      const response = await fetch('/api/users/profile', {
+          method: 'GET',
+          credentials: 'include' 
+      });
+
+      if (response.ok) {
+          const userProfile = await response.json();
+          return userProfile.id; 
+      } else {
+          console.error('Erro ao recuperar o perfil:', response.statusText);
+          return null;
+      }
+  } catch (error) {
+      console.error('Erro ao recuperar o perfil:', error);
+      return null;
+  }
+}
 
 
-export { getListaProduto, getProdutosCategoria, getProdutosGenero};
+export { getListaProduto, getProdutosCategoria, getProdutosGenero, fetchUserProfile};
