@@ -94,6 +94,7 @@ Apesar de o e-commerce Fita Cacete estar funcional, identificamos algumas melhor
 5. **Otimização para SEO**: Implementar técnicas de otimização para motores de busca (SEO), garantindo que o site tenha maior visibilidade nos resultados de pesquisa do Google e outros buscadores.
 6. **Responsividade Melhorada**: Embora o site seja funcional em dispositivos móveis, planejamos aprimorar ainda mais a responsividade, garantindo uma experiência perfeita em diferentes tamanhos de tela.
 7. **Segurança Reforçada**: Continuar aprimorando a segurança do site com monitoramento de vulnerabilidades, implementação de autenticação multifator (MFA), e melhorias no gerenciamento de senhas e dados sensíveis.
+8. **Uso de Cupons e Promoções**: Implementar um sistema de cupons de desconto e promoções, permitindo que os usuários recebam benefícios em suas compras, incentivando a fidelização e aumentando as vendas.
 
 
 ### Licença
