@@ -4,6 +4,20 @@ import {
   getProdutosGenero,
 } from './produtoAcessaDados.mjs';
 
+/// Função para exibir o modal com a descrição do produto
+function mostrarDescricao(descricao) {
+  document.getElementById("descricaoTexto").innerText = descricao;
+  document.getElementById("modalDescricao").style.display = "block";
+}
+
+export function fecharModal() {
+  document.getElementById("modalDescricao").style.display = "none";
+}
+
+document.querySelector(".close").addEventListener("click", fecharModal);
+
+
+// Modificação em criaCardProduto para adicionar o evento de clique no botão de descrição
 function criaCardProduto(produto) {
   const productCard = document.createElement('div');
   productCard.classList.add('card-product');
@@ -16,11 +30,25 @@ function criaCardProduto(produto) {
     />
     <h4>${produto.nome_produto}</h4>
     <p>R$ ${produto.preco_produto}</p>
-    <p class="descricao">${produto.descricao}</p>
+    <button class="descricao">Ver Descrição</button>
   `;
+
+  // Adiciona o evento de clique no botão de descrição
+  productCard.querySelector('.descricao').addEventListener('click', () => {
+    mostrarDescricao(produto.descricao);
+  });
 
   return productCard;
 }
+
+// Fechar o modal ao clicar fora do conteúdo
+window.onclick = function (event) {
+  const modal = document.getElementById("modalDescricao");
+  if (event.target === modal) {
+    modal.style.display = "none";
+  }
+};
+
 
 async function desenhaProdutosNaPagina(produtos) {
   const productList = document.getElementById('product-list');
