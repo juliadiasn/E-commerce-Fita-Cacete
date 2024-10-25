@@ -248,7 +248,7 @@ body {
 .card-product h4,
 p {
   color: #6a41ff;
-  font-size: 20px;
+  font-size: 16px;
 }
 
 .card-product h4 {
@@ -257,6 +257,9 @@ p {
 
 .card-product p {
   margin: 5px 0;
+  font-size: 22px;
+  color: #161616;
+  font-weight: 700;
 }
 
 .card-product p.descricao {
@@ -391,6 +394,7 @@ p {
   padding: 20px;
   border: 1px solid #888;
   width: 80%;
+  border-radius: 4px;
 }
 
 .close {
@@ -399,4 +403,11 @@ p {
   font-size: 28px;
   font-weight: bold;
   cursor: pointer;
+}
+
+#descricaoTexto {
+  color: #161616;
+  font-size: 16px;
+  margin: 10px;
+  line-height: 24px;
 }

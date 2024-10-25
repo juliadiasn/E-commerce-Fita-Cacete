@@ -5,17 +5,17 @@ import {
 } from './produtoAcessaDados.mjs';
 
 /// Função para exibir o modal com a descrição do produto
-function mostrarDescricao(descricao) {
-  document.getElementById("descricaoTexto").innerText = descricao;
-  document.getElementById("modalDescricao").style.display = "block";
+function mostrarDescricao(titulo, descricao) {
+  document.getElementById('tituloModal').innerText = titulo;
+  document.getElementById('descricaoTexto').innerText = descricao;
+  document.getElementById('modalDescricao').style.display = 'block';
 }
 
 export function fecharModal() {
-  document.getElementById("modalDescricao").style.display = "none";
+  document.getElementById('modalDescricao').style.display = 'none';
 }
 
-document.querySelector(".close").addEventListener("click", fecharModal);
-
+document.querySelector('.close').addEventListener('click', fecharModal);
 
 // Modificação em criaCardProduto para adicionar o evento de clique no botão de descrição
 function criaCardProduto(produto) {
@@ -35,7 +35,7 @@ function criaCardProduto(produto) {
 
   // Adiciona o evento de clique no botão de descrição
   productCard.querySelector('.descricao').addEventListener('click', () => {
-    mostrarDescricao(produto.descricao);
+    mostrarDescricao(produto.nome_produto, produto.descricao);
   });
 
   return productCard;
@@ -43,12 +43,11 @@ function criaCardProduto(produto) {
 
 // Fechar o modal ao clicar fora do conteúdo
 window.onclick = function (event) {
-  const modal = document.getElementById("modalDescricao");
+  const modal = document.getElementById('modalDescricao');
   if (event.target === modal) {
-    modal.style.display = "none";
+    modal.style.display = 'none';
   }
 };
-
 
 async function desenhaProdutosNaPagina(produtos) {
   const productList = document.getElementById('product-list');
@@ -107,24 +106,36 @@ function associarEventos(menuSelector, tipo) {
           }
           carregarProdutos(getProdutosCategoria, id, nome);
         } else if (tipo === 'genero') {
-          if (selecionado === 'novidades') {
+          if (selecionado === 'crime') {
             id = 1;
-            nome = 'Novidades';
-          } else if (selecionado === 'cinema') {
+            nome = 'Crime';
+          } else if (selecionado === 'aventura') {
             id = 2;
-            nome = 'Cinema';
-          } else if (selecionado === 'musica') {
+            nome = 'Aventura';
+          } else if (selecionado === 'comedia') {
             id = 3;
-            nome = 'Música';
-          } else if (selecionado === 'famosos') {
+            nome = 'Comédia';
+          } else if (selecionado === 'romance') {
             id = 4;
-            nome = 'Famosos';
-          } else if (selecionado === 'historicos') {
+            nome = 'Romance';
+          } else if (selecionado === 'terror') {
             id = 5;
-            nome = 'Históricos';
-          } else if (selecionado === 'raros') {
+            nome = 'Terror';
+          } else if (selecionado === 'drama') {
             id = 6;
-            nome = 'Edições Raras';
+            nome = 'Drama';
+          } else if (selecionado === 'ficcao') {
+            id = 7;
+            nome = 'Ficção';
+          } else if (selecionado === 'acao') {
+            id = 8;
+            nome = 'Ação';
+          } else if (selecionado === 'triller') {
+            id = 9;
+            nome = 'Triller';
+          } else if (selecionado === 'rock') {
+            id = 10;
+            nome = 'Rock';
           }
           carregarProdutos(getProdutosGenero, id, nome);
         }
