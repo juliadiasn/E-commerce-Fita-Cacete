@@ -10,6 +10,8 @@ Projeto da disciplina Projeto Integrador III - IFMG *Campus* São João Evangeli
 - Júlia Pascoal - Pesquisa
 - Rian Kayque - Design
 
+**Apresentação:** https://youtu.be/x8Rv1GkUhTM?si=GyrxpXx5drJY-bqF
+
 
 ### Meios de Contato
 Se você tiver alguma dúvida, sugestão ou quiser conversar sobre o projeto, sinta-se à vontade para entrar em contato conosco:
